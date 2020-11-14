@@ -1,6 +1,5 @@
 # Check out https://docs.codemagic.io/getting-started/building-a-react-native-app/ for more information
 # Please review and update values in curly braces
-
 workflows:
     react-native:
         name: React Native App
@@ -12,6 +11,7 @@ workflows:
             - |
                 # build Android
                 cd android
+                chmod +x gradlew
                 ./gradlew assembleDebug
         artifacts:
             - android/app/build/outputs/**/*.apk
